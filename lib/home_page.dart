@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         body: bottomBarPages[selectedIndex],
         bottomNavigationBar: BottomAppBar(
           child: Container(
-            height: SizeConfig.screenHeight * 0.09,
+            height: SizeConfig.screenHeight * 0.1,
             color: Colors.black54,
             child: Row(
               children: <Widget>[
