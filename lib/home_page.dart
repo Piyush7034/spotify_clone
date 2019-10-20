@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/bottombar_pages/spotify_home_page.dart';
+import 'package:spotify_clone/bottombar_pages/spotify_library_page.dart';
+import 'package:spotify_clone/bottombar_pages/spotify_search_page.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,8 +13,8 @@ class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   static List<Widget> bottomBarPages = <Widget>[
     SpotifyHomePage(),
-    Container(),
-    Container(),
+    SpotifySearchPage(),
+    SpotifyLibraryPage(),
     Container()
   ];
 

@@ -61,7 +61,6 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                   ),
                   Container(
                     padding: EdgeInsets.all(10.0),
-//                    height: SizeConfig.screenHeight,
                     width: SizeConfig.screenWidth,
                     color: Colors.black,
                     child: Column(
@@ -74,10 +73,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                         ),
                         Container(
                           margin: EdgeInsets.only(
-                              top: 15.0,
-                              bottom: 10.0,
-                              left: 20.0,
-                              right: 20.0),
+                              top: 15.0, bottom: 10.0, left: 20.0, right: 20.0),
                           color: Colors.white,
                         ),
                         Text(
