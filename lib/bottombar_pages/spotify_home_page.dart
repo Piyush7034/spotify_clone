@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/utils/lists.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 import 'package:spotify_clone/utils/styles.dart';
 
@@ -96,7 +97,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               controller: scrollController,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 5,
+                              itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Container(
                                   child: Column(
@@ -105,14 +106,19 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                                         margin: EdgeInsets.all(10.0),
                                         height: SizeConfig.screenHeight * 0.2,
                                         width: SizeConfig.screenWidth * 0.6,
-                                        color: Colors.blue,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(Lists
+                                                  .artists[index]['image']),
+                                              fit: BoxFit.cover),
+                                        ),
                                       ),
                                       Text(
-                                        'Gold Spot',
+                                        Lists.artists[index]['item_header'],
                                         style: Styles.listItemHeaderText,
                                       ),
                                       Text(
-                                        'Lorem Ipsum',
+                                        Lists.artists[index]['item_detail'],
                                         style: Styles.listItemDetailText,
                                       )
                                     ],
@@ -136,7 +142,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               controller: scrollController,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 5,
+                              itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Column(
                                   children: <Widget>[
@@ -144,14 +150,19 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                                       margin: EdgeInsets.all(10.0),
                                       height: SizeConfig.screenHeight * 0.2,
                                       width: SizeConfig.screenWidth * 0.6,
-                                      color: Colors.blue,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                Lists.artists[index]['image']),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
                                     Text(
-                                      'Gold Spot',
+                                      Lists.artists[index]['item_header'],
                                       style: Styles.listItemHeaderText,
                                     ),
                                     Text(
-                                      'Lorem Ipsum',
+                                      Lists.artists[index]['item_detail'],
                                       style: Styles.listItemDetailText,
                                     )
                                   ],
@@ -174,7 +185,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               controller: scrollController,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 5,
+                              itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Column(
                                   children: <Widget>[
@@ -182,14 +193,19 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                                       margin: EdgeInsets.all(10.0),
                                       height: SizeConfig.screenHeight * 0.2,
                                       width: SizeConfig.screenWidth * 0.5,
-                                      color: Colors.blue,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                Lists.artists[index]['image']),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
                                     Text(
-                                      'Gold Spot',
+                                      Lists.artists[index]['item_header'],
                                       style: Styles.listItemHeaderText,
                                     ),
                                     Text(
-                                      'Lorem Ipsum',
+                                      Lists.artists[index]['item_detail'],
                                       style: Styles.listItemDetailText,
                                     )
                                   ],
@@ -212,7 +228,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               controller: scrollController,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 5,
+                              itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Column(
                                   children: <Widget>[
@@ -220,14 +236,19 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                                       margin: EdgeInsets.all(10.0),
                                       height: SizeConfig.screenHeight * 0.2,
                                       width: SizeConfig.screenWidth * 0.6,
-                                      color: Colors.blue,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                Lists.artists[index]['image']),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
                                     Text(
-                                      'Gold Spot',
+                                      Lists.artists[index]['item_header'],
                                       style: Styles.listItemHeaderText,
                                     ),
                                     Text(
-                                      'Lorem Ipsum',
+                                      Lists.artists[index]['item_detail'],
                                       style: Styles.listItemDetailText,
                                     )
                                   ],
@@ -250,7 +271,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               controller: scrollController,
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: 5,
+                              itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Column(
                                   children: <Widget>[
@@ -258,19 +279,88 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                                       margin: EdgeInsets.all(10.0),
                                       height: SizeConfig.screenHeight * 0.2,
                                       width: SizeConfig.screenWidth * 0.6,
-                                      color: Colors.blue,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                Lists.artists[index]['image']),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
                                     Text(
-                                      'Gold Spot',
+                                      Lists.artists[index]['item_header'],
                                       style: Styles.listItemHeaderText,
                                     ),
                                     Text(
-                                      'Lorem Ipsum',
+                                      Lists.artists[index]['item_detail'],
                                       style: Styles.listItemDetailText,
                                     )
                                   ],
                                 );
                               }),
+                        ),
+                        SizedBox(
+                          height: SizeConfig.screenHeight * 0.1,
+                        ),
+                        ListView.builder(
+                          controller: scrollController,
+                          itemCount: Lists.artists.length,
+                          scrollDirection: Axis.vertical,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              margin: EdgeInsets.all(10.0),
+                              width: SizeConfig.screenWidth * 0.8,
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'Because you like',
+                                    style: Styles.listItemDetailText,
+                                  ),
+                                  Text(
+                                    Lists.artists[index]['item_detail'],
+                                    style: Styles.listItemHeaderText,
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(10.0),
+                                    child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          width: SizeConfig.screenWidth * 0.8,
+                                          alignment: Alignment.center,
+                                          color: Colors.white,
+                                          height:
+                                              SizeConfig.screenHeight * 0.15,
+                                          child: Text(
+                                            'This is ' +
+                                                Lists.artists[index]
+                                                    ['item_detail'],
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                            maxLines: null,
+                                          ),
+                                        ),
+                                        Container(
+                                            height:
+                                                SizeConfig.screenHeight * 0.3,
+                                            width: SizeConfig.screenWidth * 0.8,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(Lists
+                                                    .artists[index]['image']),
+                                              ),
+                                            ),
+                                            child: Container()),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20.0,
+                                  )
+                                ],
+                              ),
+                            );
+                          },
                         )
                       ],
                     ),
