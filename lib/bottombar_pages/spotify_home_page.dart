@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/bottombar_pages/songs_page.dart';
 import 'package:spotify_clone/utils/lists.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 import 'package:spotify_clone/utils/styles.dart';
@@ -99,7 +100,82 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               scrollDirection: Axis.horizontal,
                               itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
-                                return Container(
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SongsPage(
+                                          image: Lists.artists[index]['image'],
+                                          header: Lists.artists[index]
+                                              ['item_detail'],
+                                          songs: Lists.artists[index]['songs'],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.all(10.0),
+                                          height: SizeConfig.screenHeight * 0.2,
+                                          width: SizeConfig.screenWidth * 0.6,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(Lists
+                                                    .artists[index]['image']),
+                                                fit: BoxFit.cover),
+                                          ),
+                                        ),
+                                        Text(
+                                          Lists.artists[index]['item_header'],
+                                          style: Styles.listItemHeaderText,
+                                        ),
+                                        Text(
+                                          Lists.artists[index]['item_detail'],
+                                          style: Styles.listItemDetailText,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }),
+                        ),
+                        SizedBox(
+                          height: 25.0,
+                        ),
+                        Text(
+                          'Popular and trending',
+                          style: Styles.headerText,
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Container(
+                          height: SizeConfig.screenHeight * 0.30,
+                          child: ListView.builder(
+                              controller: scrollController,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              itemCount: Lists.artists.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SongsPage(
+                                          image: Lists.artists[index]['image'],
+                                          header: Lists.artists[index]
+                                              ['item_detail'],
+                                          songs: Lists.artists[index]['songs'],
+                                        ),
+                                      ),
+                                    );
+                                  },
                                   child: Column(
                                     children: <Widget>[
                                       Container(
@@ -130,49 +206,6 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                           height: 25.0,
                         ),
                         Text(
-                          'Popular and trending',
-                          style: Styles.headerText,
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Container(
-                          height: SizeConfig.screenHeight * 0.30,
-                          child: ListView.builder(
-                              controller: scrollController,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              itemCount: Lists.artists.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.all(10.0),
-                                      height: SizeConfig.screenHeight * 0.2,
-                                      width: SizeConfig.screenWidth * 0.6,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                Lists.artists[index]['image']),
-                                            fit: BoxFit.cover),
-                                      ),
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_header'],
-                                      style: Styles.listItemHeaderText,
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_detail'],
-                                      style: Styles.listItemDetailText,
-                                    )
-                                  ],
-                                );
-                              }),
-                        ),
-                        SizedBox(
-                          height: 25.0,
-                        ),
-                        Text(
                           'Sound of India',
                           style: Styles.headerText,
                         ),
@@ -187,28 +220,44 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               scrollDirection: Axis.horizontal,
                               itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.all(10.0),
-                                      height: SizeConfig.screenHeight * 0.2,
-                                      width: SizeConfig.screenWidth * 0.5,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                Lists.artists[index]['image']),
-                                            fit: BoxFit.cover),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SongsPage(
+                                          image: Lists.artists[index]['image'],
+                                          header: Lists.artists[index]
+                                              ['item_detail'],
+                                          songs: Lists.artists[index]['songs'],
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_header'],
-                                      style: Styles.listItemHeaderText,
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_detail'],
-                                      style: Styles.listItemDetailText,
-                                    )
-                                  ],
+                                    );
+                                  },
+                                  child: Column(
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsets.all(10.0),
+                                        height: SizeConfig.screenHeight * 0.2,
+                                        width: SizeConfig.screenWidth * 0.5,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(Lists
+                                                  .artists[index]['image']),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_header'],
+                                        style: Styles.listItemHeaderText,
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_detail'],
+                                        style: Styles.listItemDetailText,
+                                      )
+                                    ],
+                                  ),
                                 );
                               }),
                         ),
@@ -230,28 +279,44 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               scrollDirection: Axis.horizontal,
                               itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.all(10.0),
-                                      height: SizeConfig.screenHeight * 0.2,
-                                      width: SizeConfig.screenWidth * 0.6,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                Lists.artists[index]['image']),
-                                            fit: BoxFit.cover),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SongsPage(
+                                          image: Lists.artists[index]['image'],
+                                          header: Lists.artists[index]
+                                              ['item_detail'],
+                                          songs: Lists.artists[index]['songs'],
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_header'],
-                                      style: Styles.listItemHeaderText,
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_detail'],
-                                      style: Styles.listItemDetailText,
-                                    )
-                                  ],
+                                    );
+                                  },
+                                  child: Column(
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsets.all(10.0),
+                                        height: SizeConfig.screenHeight * 0.2,
+                                        width: SizeConfig.screenWidth * 0.6,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(Lists
+                                                  .artists[index]['image']),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_header'],
+                                        style: Styles.listItemHeaderText,
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_detail'],
+                                        style: Styles.listItemDetailText,
+                                      )
+                                    ],
+                                  ),
                                 );
                               }),
                         ),
@@ -273,28 +338,44 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                               scrollDirection: Axis.horizontal,
                               itemCount: Lists.artists.length,
                               itemBuilder: (BuildContext context, int index) {
-                                return Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.all(10.0),
-                                      height: SizeConfig.screenHeight * 0.2,
-                                      width: SizeConfig.screenWidth * 0.6,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                Lists.artists[index]['image']),
-                                            fit: BoxFit.cover),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            SongsPage(
+                                          image: Lists.artists[index]['image'],
+                                          header: Lists.artists[index]
+                                              ['item_detail'],
+                                          songs: Lists.artists[index]['songs'],
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_header'],
-                                      style: Styles.listItemHeaderText,
-                                    ),
-                                    Text(
-                                      Lists.artists[index]['item_detail'],
-                                      style: Styles.listItemDetailText,
-                                    )
-                                  ],
+                                    );
+                                  },
+                                  child: Column(
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsets.all(10.0),
+                                        height: SizeConfig.screenHeight * 0.2,
+                                        width: SizeConfig.screenWidth * 0.6,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(Lists
+                                                  .artists[index]['image']),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_header'],
+                                        style: Styles.listItemHeaderText,
+                                      ),
+                                      Text(
+                                        Lists.artists[index]['item_detail'],
+                                        style: Styles.listItemDetailText,
+                                      )
+                                    ],
+                                  ),
                                 );
                               }),
                         ),
@@ -307,57 +388,74 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
                           itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              margin: EdgeInsets.all(10.0),
-                              width: SizeConfig.screenWidth * 0.8,
-                              child: Column(
-                                children: <Widget>[
-                                  Text(
-                                    'Because you like',
-                                    style: Styles.listItemDetailText,
-                                  ),
-                                  Text(
-                                    Lists.artists[index]['item_detail'],
-                                    style: Styles.listItemHeaderText,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.all(10.0),
-                                    child: Column(
-                                      children: <Widget>[
-                                        Container(
-                                          width: SizeConfig.screenWidth * 0.8,
-                                          alignment: Alignment.center,
-                                          color: Colors.white,
-                                          height:
-                                              SizeConfig.screenHeight * 0.15,
-                                          child: Text(
-                                            'This is ' +
-                                                Lists.artists[index]
-                                                    ['item_detail'],
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                color: Colors.black),
-                                            maxLines: null,
-                                          ),
-                                        ),
-                                        Container(
-                                            height:
-                                                SizeConfig.screenHeight * 0.3,
-                                            width: SizeConfig.screenWidth * 0.8,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: AssetImage(Lists
-                                                    .artists[index]['image']),
-                                              ),
-                                            ),
-                                            child: Container()),
-                                      ],
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        SongsPage(
+                                      image: Lists.artists[index]['image'],
+                                      header: Lists.artists[index]
+                                          ['item_detail'],
+                                      songs: Lists.artists[index]['songs'],
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 20.0,
-                                  )
-                                ],
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.all(10.0),
+                                width: SizeConfig.screenWidth * 0.8,
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      'Because you like',
+                                      style: Styles.listItemDetailText,
+                                    ),
+                                    Text(
+                                      Lists.artists[index]['item_detail'],
+                                      style: Styles.listItemHeaderText,
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.all(10.0),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Container(
+                                            width: SizeConfig.screenWidth * 0.8,
+                                            alignment: Alignment.center,
+                                            color: Colors.white,
+                                            height:
+                                                SizeConfig.screenHeight * 0.15,
+                                            child: Text(
+                                              'This is ' +
+                                                  Lists.artists[index]
+                                                      ['item_detail'],
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.black),
+                                              maxLines: null,
+                                            ),
+                                          ),
+                                          Container(
+                                              height:
+                                                  SizeConfig.screenHeight * 0.3,
+                                              width:
+                                                  SizeConfig.screenWidth * 0.8,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                  image: AssetImage(Lists
+                                                      .artists[index]['image']),
+                                                ),
+                                              ),
+                                              child: Container()),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20.0,
+                                    )
+                                  ],
+                                ),
                               ),
                             );
                           },

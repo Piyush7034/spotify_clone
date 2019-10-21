@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/bottombar_pages/spotify_home_page.dart';
 import 'package:spotify_clone/bottombar_pages/spotify_library_page.dart';
+import 'package:spotify_clone/bottombar_pages/spotify_premium_page.dart';
 import 'package:spotify_clone/bottombar_pages/spotify_search_page.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     SpotifyHomePage(),
     SpotifySearchPage(),
     SpotifyLibraryPage(),
-    Container()
+    SpotifyPremiumPage()
   ];
 
   @override
