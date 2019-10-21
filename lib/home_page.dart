@@ -138,10 +138,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  void _onSelectIndex(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
 }

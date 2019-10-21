@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/bottombar_pages/songs_page.dart';
+import 'package:spotify_clone/settings.dart';
 import 'package:spotify_clone/utils/lists.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 import 'package:spotify_clone/utils/styles.dart';
@@ -467,9 +468,19 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
               ),
             ),
             Positioned(
-                top: SizeConfig.screenHeight * 0.01,
-                right: SizeConfig.screenWidth * 0.01,
-                child: IconButton(icon: Icon(Icons.settings), onPressed: () {}))
+              top: SizeConfig.screenHeight * 0.01,
+              right: SizeConfig.screenWidth * 0.01,
+              child: IconButton(
+                  icon: Icon(Icons.settings),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => Settings(),
+                      ),
+                    );
+                  }),
+            )
           ],
         ),
       ),

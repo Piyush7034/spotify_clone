@@ -110,42 +110,39 @@ class SpotifyPremiumPageState extends State<SpotifyPremiumPage> {
                   },
                 ),
               ),
-              Container(
-                color: Colors.black,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 2.5,
+                      backgroundColor:
+                          index == 0 ? Colors.deepOrange : Colors.white,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(10.0),
-                      child: CircleAvatar(
-                        radius: 2.5,
-                        backgroundColor:
-                            index == 0 ? Colors.green : Colors.white,
-                      ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 2.5,
+                      backgroundColor:
+                          index == 1 ? Colors.deepOrange : Colors.white,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(10.0),
-                      child: CircleAvatar(
-                        radius: 2.5,
-                        backgroundColor:
-                            index == 1 ? Colors.green : Colors.white,
-                      ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10.0),
+                    child: CircleAvatar(
+                      radius: 2.5,
+                      backgroundColor:
+                          index == 2 ? Colors.deepOrange : Colors.white,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(10.0),
-                      child: CircleAvatar(
-                        radius: 2.5,
-                        backgroundColor:
-                            index == 2 ? Colors.green : Colors.white,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(),
-                    ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    child: Container(),
+                  ),
+                ],
               ),
               RaisedButton(
                 color: Colors.white,
