@@ -27,7 +27,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
                 Tab(text: 'Shows'),
               ],
               labelStyle: TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -48,10 +48,9 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
   Widget _spotifyEpisodes() {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: SizeConfig.screenHeight * 0.2,
-          ),
           Container(
             margin: EdgeInsets.all(10),
             alignment: Alignment.center,
@@ -59,6 +58,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
               'Looking for something to listen to?',
               maxLines: null,
               style: Styles.headerText,
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(
@@ -91,10 +91,9 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
   Widget _spotifyDownloads() {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: SizeConfig.screenHeight * 0.2,
-          ),
           Container(
             margin: EdgeInsets.all(10),
             alignment: Alignment.center,
@@ -102,6 +101,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
               'No downloads yet',
               maxLines: null,
               style: Styles.headerText,
+              textAlign: TextAlign.center,
             ),
           ),
           Container(
@@ -110,6 +110,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
               "Tap down on an episode to listen without a conection",
               maxLines: null,
               style: Styles.generalDetailText,
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(
@@ -142,10 +143,9 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
   Widget _spotifyShows() {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: SizeConfig.screenHeight * 0.2,
-          ),
           Container(
             margin: EdgeInsets.all(10),
             alignment: Alignment.center,
@@ -153,6 +153,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
               "You haven't followed any podcasts yet.",
               maxLines: null,
               style: Styles.headerText,
+              textAlign: TextAlign.center,
             ),
           ),
           Container(
@@ -161,6 +162,7 @@ class SpotifyPodcastsState extends State<SpotifyPodcasts> {
               "When you follow a podcast,you'll get new episodes automatically.",
               maxLines: null,
               style: Styles.generalDetailText,
+              textAlign: TextAlign.center,
             ),
           ),
           SizedBox(

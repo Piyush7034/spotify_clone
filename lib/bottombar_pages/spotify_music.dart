@@ -30,7 +30,7 @@ class SpotifyMusicState extends State<SpotifyMusic> {
                 Tab(text: 'Albums'),
               ],
               labelStyle: TextStyle(
-                fontSize: 20,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
