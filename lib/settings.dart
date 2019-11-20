@@ -97,40 +97,20 @@ class SettingsState extends State<Settings> {
               SizedBox(
                 height: 10.0,
               ),
-
-
-//              Row(
-//                children: <Widget>[
-//                  Expanded(
-//                    child: Container(
-//                      height: 60,
-//                      child: Column(
-//                        children: <Widget>[
-//                          Text(
-//                            'Off',
-//                            style: Styles.hintText,
-//                          ),
-//                          Text(
-//                            'Sets your music quality to low and disables canvas',
-//                            maxLines: null,
-//                            style: Styles.listItemDetailText,
-//                          ),
-//                        ],
-//                      ),
-//                    ),
-//                  ),
-//                  Container(
-//                    width: 20,
-//                    child: SwitchListTile(
-//                        value: isOn,
-//                        onChanged: (bool value) {
-//                          setState(() {
-//                            isOn = value;
-//                          });
-//                        }),
-//                  )
-//                ],
-//              )
+              SwitchListTile(
+                value: isOn,
+                onChanged: (bool value) {
+                  setState(() {
+                    isOn = value;
+                  });
+                },
+                title: Text(
+                  'Off',
+                  style: Styles.listItemHeaderText,
+                ),
+                subtitle:
+                    Text('Sets your music quality to low and disables Canvas'),
+              )
             ],
           ),
         ),
