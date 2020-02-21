@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/bottombar_pages/custom_bottom_bar.dart';
 import 'package:spotify_clone/bottombar_pages/songs_page.dart';
-import 'package:spotify_clone/settings.dart';
 import 'package:spotify_clone/utils/lists.dart';
 import 'package:spotify_clone/utils/size_config.dart';
 import 'package:spotify_clone/utils/styles.dart';
@@ -476,7 +476,7 @@ class SpotifyHomePageState extends State<SpotifyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => Settings(),
+                        builder: (BuildContext context) => CustomBottomBar(),
                       ),
                     );
                   }),
